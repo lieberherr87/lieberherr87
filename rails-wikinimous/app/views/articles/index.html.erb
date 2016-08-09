@@ -1,0 +1,8 @@
+
+<% @articles.each do |article| %>
+  <h2><%= link_to article.title, article_path(article) %></h2>
+  <p><%= truncate(article.content, length: 120, omission: "") %></p>
+  <p><%= link_to "Edit", edit_article_path(article) %></p>
+  <p><%= link_to "Delete", article_path(article), method: :delete %></p>
+<% end %>
+
